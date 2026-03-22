@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Anubhav Vyas — Programmer & Data Scientist Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Anubhav Vyas — Programmer and Data Scientist specializing in machine learning, data analysis, and software development." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#303030",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-container": "#292a2a",
+                        "surface-container-high": "var(--color-surface-container-high)",
+                        "surface": "var(--color-surface)",
+                        "on-tertiary": "#303030",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-container-highest": "#353535",
+                        "on-error-container": "#ffdad6",
+                        "primary": "var(--color-primary)",
+                        "secondary": "#c6c6c7",
+                        "on-surface": "var(--color-on-surface)",
+                        "on-secondary-container": "#b4b5b5",
+                        "tertiary": "#c8c6c6",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-secondary": "#2f3131",
+                        "background": "#131313",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "error-container": "#93000a",
+                        "outline": "var(--color-outline)",
+                        "surface-tint": "#c7c6c6",
+                        "on-primary-fixed-variant": "#464747",
+                        "surface-container-low": "var(--color-surface-container-low)",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary-container": "#292a2a",
+                        "surface-dim": "#131313",
+                        "surface-bright": "#393939",
+                        "inverse-primary": "#5e5e5e",
+                        "on-primary-fixed": "#1b1c1c",
+                        "primary-container": "#919191",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "outline-variant": "var(--color-outline-variant)",
+                        "surface-variant": "var(--color-surface-variant)",
+                        "on-primary": "var(--color-on-primary)",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "secondary-container": "#454747",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "tertiary-fixed": "#e4e2e2",
+                        "primary-fixed": "#e3e2e2",
+                        "on-surface-variant": "var(--color-on-surface-variant)",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-container": "#919090",
+                        "on-error": "#690005"
+                    },
+                    fontFamily: {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            --color-surface: #ffffff;
+            --color-on-surface: #101010;
+            --color-surface-variant: #f0f0f0;
+            --color-on-surface-variant: #444748;
+            --color-surface-container-low: #f5f5f5;
+            --color-surface-container-high: #eaeaea;
+            --color-primary: #1e1e1e;
+            --color-on-primary: #ffffff;
+            --color-outline: #8e9192;
+            --color-outline-variant: #c4c7c7;
+            --pill-bg: rgba(0, 0, 0, 0.05);
+            --pill-hover: rgba(0, 0, 0, 0.1);
+            --pill-text: #4a4a4a;
+            --pill-hover-text: #131313;
+        }
+
+        .dark {
+            --color-surface: #131313;
+            --color-on-surface: #e2e2e2;
+            --color-surface-variant: #353535;
+            --color-on-surface-variant: #c4c7c7;
+            --color-surface-container-low: #1b1b1b;
+            --color-surface-container-high: #2a2a2a;
+            --color-primary: #c7c6c6;
+            --color-on-primary: #303031;
+            --color-outline: #8e9192;
+            --color-outline-variant: #444748;
+            --pill-bg: rgba(53, 53, 53, 0.6);
+            --pill-hover: rgba(145, 145, 145, 0.25);
+            --pill-text: #c4c7c7;
+            --pill-hover-text: #e2e2e2;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: var(--color-surface);
+            color: var(--color-on-surface);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero-title {
+            line-height: 0.9;
+        }
+
+        .custom-bezier {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Nav underline indicator */
+        .nav-links-wrapper {
+            position: relative;
+        }
+
+        .nav-underline {
+            position: absolute;
+            bottom: -2px;
+            height: 1px;
+            background-color: var(--pill-hover-text);
+            transition: left 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                width 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            pointer-events: none;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.5s ease;
+        }
+
+        .nav-link.active {
+            color: #f5f5f5 !important;
+        }
+
+        .nav-link:not(.active) {
+            color: #737373 !important;
+        }
+
+        /* Skills pill styles */
+        .skill-pill {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--pill-bg);
+            border-radius: 100px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 300;
+            color: var(--pill-text);
+            letter-spacing: 0.02em;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .skill-pill:hover {
+            background: var(--pill-hover);
+            color: var(--pill-hover-text);
+            transform: translateY(-2px);
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl">
+        <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+            <div class="text-xl font-epilogue font-light tracking-[0.2em] text-neutral-900 dark:text-neutral-100">ANUBHAV VYAS</div>
+            <div class="hidden md:flex gap-12 items-center nav-links-wrapper">
+                <a class="nav-link active font-epilogue font-extralight tracking-tighter pb-1" href="#work"
+                    data-section="work">Work</a>
+                <a class="nav-link font-epilogue font-extralight tracking-tighter pb-1" href="#blogs"
+                    data-section="blogs">Blogs</a>
+                <a class="nav-link font-epilogue font-extralight tracking-tighter pb-1" href="#about"
+                    data-section="about">About</a>
+                <a class="nav-link font-epilogue font-extralight tracking-tighter pb-1" href="#contact"
+                    data-section="contact">Contact</a>
+                <span class="nav-underline" id="navUnderline"></span>
+            </div>
+            <div class="flex gap-6 items-center">
+                <a class="text-neutral-800 dark:text-neutral-200 hover:opacity-70 transition-opacity duration-500 font-label text-[10px] tracking-[0.15em] uppercase"
+                    href="https://leetcode.com/u/r0c9y/" target="_blank">LeetCode</a>
+                <a class="text-neutral-800 dark:text-neutral-200 hover:opacity-70 transition-opacity duration-500 font-label text-[10px] tracking-[0.15em] uppercase"
+                    href="https://www.linkedin.com/in/anubhav-vyas-04701332a/" target="_blank">LinkedIn</a>
+                <a class="text-neutral-800 dark:text-neutral-200 hover:opacity-70 transition-opacity duration-500"
+                    href="mailto:09anubhavvyas11@gmail.com">
+                    <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                </a>
+                <a class="text-neutral-800 dark:text-neutral-200 hover:opacity-70 transition-opacity duration-500" href="tel:7728043319">
+                    <span class="material-symbols-outlined" data-icon="call">call</span>
+                </a>
+                <button id="theme-toggle" class="text-neutral-800 dark:text-neutral-200 hover:opacity-70 transition-opacity duration-500 ml-4 flex items-center justify-center" aria-label="Toggle Theme">
+                    <span class="material-symbols-outlined dark:hidden">light_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="px-8 mb-40 max-w-screen-2xl mx-auto">
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-12 lg:col-span-8">
+                    <h1
+                        class="font-headline font-extralight text-[clamp(4rem,15vw,12rem)] tracking-[-0.04em] hero-title text-on-surface">
+                        Hi, I'm<br />Anubhav
+                    </h1>
+                </div>
+                <div class="col-span-12 lg:col-span-4 self-end lg:pb-12 mt-8 lg:mt-0">
+                    <div class="flex flex-col gap-6">
+                        <div class="w-12 h-[1px] bg-outline-variant"></div>
+                        <p class="font-body font-light text-xl text-on-surface-variant leading-relaxed">
+                            I specialize in optimizing models and deploying<br/>AI-driven solutions for real-world impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Work Showcase -->
+        <section class="px-8 mb-40 max-w-screen-2xl mx-auto" id="work">
+            <div class="reveal">
+                <h2 class="font-headline text-5xl font-extralight tracking-tight mb-16">Selected Projects</h2>
+                <!-- GitHub Projects -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-3 mb-10">
+                        <svg class="w-5 h-5 text-on-surface-variant" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <h3 class="font-headline text-xl font-extralight tracking-tight">GitHub Projects</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Repo 1 -->
+                        <a href="https://github.com/anubhav09dot07/Nifty50-LSTM-stock-prediction" target="_blank"
+                            class="group block bg-surface-container-low hover:bg-surface-container-high p-6 transition-all duration-500 custom-bezier">
+                            <div class="flex items-start justify-between mb-3">
+                                <h4 class="font-headline text-lg font-light group-hover:text-primary transition-colors">
+                                    Nifty50-LSTM-stock-prediction</h4>
+                                <span
+                                    class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+                            </div>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">LSTM-based deep
+                                learning model for predicting Nifty 50 stock market trends.</p>
+                            <span class="skill-pill text-[11px] py-1 px-3">Jupyter Notebook</span>
+                        </a>
+                        <!-- Repo 2 -->
+                        <a href="https://github.com/anubhav09dot07/Olist-Brazil-E-Commerce-Analysis" target="_blank"
+                            class="group block bg-surface-container-low hover:bg-surface-container-high p-6 transition-all duration-500 custom-bezier">
+                            <div class="flex items-start justify-between mb-3">
+                                <h4 class="font-headline text-lg font-light group-hover:text-primary transition-colors">
+                                    Olist-Brazil-E-Commerce-Analysis</h4>
+                                <span
+                                    class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+                            </div>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">Analyzed 100K+
+                                transactions to uncover revenue trends, customer behavior, and delivery insights with
+                                Tableau dashboards.</p>
+                            <span class="skill-pill text-[11px] py-1 px-3">Jupyter Notebook</span>
+                        </a>
+                        <!-- Repo 3 -->
+                        <a href="https://github.com/anubhav09dot07/resume-ranker" target="_blank"
+                            class="group block bg-surface-container-low hover:bg-surface-container-high p-6 transition-all duration-500 custom-bezier">
+                            <div class="flex items-start justify-between mb-3">
+                                <h4 class="font-headline text-lg font-light group-hover:text-primary transition-colors">
+                                    resume-ranker</h4>
+                                <span
+                                    class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+                            </div>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">ML system that
+                                automatically matches and ranks candidate resumes against job descriptions using NLP.
+                            </p>
+                            <span class="skill-pill text-[11px] py-1 px-3">HTML</span>
+                        </a>
+                        <!-- Repo 4 -->
+                        <a href="https://github.com/anubhav09dot07/Detailed-Diagnostic-Report-DDR-Generator"
+                            target="_blank"
+                            class="group block bg-surface-container-low hover:bg-surface-container-high p-6 transition-all duration-500 custom-bezier">
+                            <div class="flex items-start justify-between mb-3">
+                                <h4 class="font-headline text-lg font-light group-hover:text-primary transition-colors">
+                                    Detailed-Diagnostic-Report-DDR-Generator</h4>
+                                <span
+                                    class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+                            </div>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">Automated
+                                diagnostic report generator built in Python for streamlined analysis workflows.</p>
+                            <span class="skill-pill text-[11px] py-1 px-3">Python</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Hugging Face Spaces -->
+                <div>
+                    <div class="flex items-center gap-3 mb-10">
+                        <svg class="w-5 h-5 text-on-surface-variant" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.003 1.5C6.204 1.5 1.5 6.204 1.5 12.003c0 5.798 4.704 10.503 10.503 10.503 5.798 0 10.497-4.705 10.497-10.503C22.5 6.204 17.801 1.5 12.003 1.5zM8.47 15.22a1.592 1.592 0 01-1.127-.467 1.592 1.592 0 01-.467-1.127c0-.424.156-.79.467-1.096a1.55 1.55 0 011.127-.467c.44 0 .812.156 1.116.467.304.305.456.672.456 1.096 0 .44-.152.812-.456 1.127-.304.311-.676.467-1.116.467zm7.06 0a1.592 1.592 0 01-1.127-.467 1.574 1.574 0 01-.467-1.127c0-.424.156-.79.467-1.096a1.55 1.55 0 011.127-.467c.44 0 .812.156 1.116.467.305.305.457.672.457 1.096 0 .44-.152.812-.457 1.127-.304.311-.676.467-1.116.467z" />
+                        </svg>
+                        <h3 class="font-headline text-xl font-extralight tracking-tight">Hugging Face Spaces</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Space 1 -->
+                        <a href="https://huggingface.co/spaces/anubhav0907/Nifty50-LSTM" target="_blank"
+                            class="group block bg-surface-container-low hover:bg-surface-container-high p-6 transition-all duration-500 custom-bezier">
+                            <div class="flex items-start justify-between mb-3">
+                                <h4 class="font-headline text-lg font-light group-hover:text-primary transition-colors">
+                                    Nifty50-LSTM</h4>
+                                <span
+                                    class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+                            </div>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">Live deployed LSTM
+                                model for Nifty 50 stock price prediction.</p>
+                            <div class="flex gap-2">
+                                <span class="skill-pill text-[11px] py-1 px-3">Docker</span>
+                                <span class="skill-pill text-[11px] py-1 px-3">⭐ 1</span>
+                            </div>
+                        </a>
+                        <!-- Space 2 -->
+                        <a href="https://huggingface.co/spaces/anubhav0907/resume-ranker" target="_blank"
+                            class="group block bg-surface-container-low hover:bg-surface-container-high p-6 transition-all duration-500 custom-bezier">
+                            <div class="flex items-start justify-between mb-3">
+                                <h4 class="font-headline text-lg font-light group-hover:text-primary transition-colors">
+                                    resume-ranker</h4>
+                                <span
+                                    class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+                            </div>
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">Deployed resume
+                                ranking app that matches candidates to job descriptions.</p>
+                            <div class="flex gap-2">
+                                <span class="skill-pill text-[11px] py-1 px-3">Docker</span>
+                                <span class="skill-pill text-[11px] py-1 px-3">⭐ 1</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="px-8 mb-40 max-w-screen-2xl mx-auto" id="blogs">
+            <div class="reveal">
+                <div class="flex items-center gap-3 mb-16">
+                    <span class="material-symbols-outlined text-4xl font-extralight text-on-surface-variant">article</span>
+                    <h2 class="font-headline text-5xl font-extralight tracking-tight">Blogs</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Blog Entry Template -->
+                    <a href="#"
+                        class="group block bg-surface-container-low hover:bg-surface-container-high p-6 transition-all duration-500 custom-bezier">
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="font-headline text-lg font-light group-hover:text-primary transition-colors">
+                                Insights & Tutorials (Coming Soon)</h4>
+                            <span
+                                class="material-symbols-outlined text-outline text-sm opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </div>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">I will be routinely publishing my own articles and technical guides related to Data Science and Machine Learning models here.</p>
+                        <span class="skill-pill text-[11px] py-1 px-3">Tech Blog</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Expertise -->
+        <section class="bg-surface-container-low py-32 md:py-48" id="skills">
+            <div class="px-8 max-w-screen-2xl mx-auto">
+                <div class="mb-20 reveal">
+                    <span
+                        class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-6 block">Toolkit</span>
+                    <h3 class="font-headline text-5xl font-extralight tracking-tight">Skills &amp; Expertise</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+
+                    <!-- Languages -->
+                    <div class="reveal" style="transition-delay: 60ms;">
+                        <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-6">Languages</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">Java</span>
+                            <span class="skill-pill">Bash</span>
+                        </div>
+                    </div>
+                    <!-- Data & ML -->
+                    <div class="reveal" style="transition-delay: 120ms;">
+                        <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-6">Data &amp; ML
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill">NumPy</span>
+                            <span class="skill-pill">Pandas</span>
+                            <span class="skill-pill">Scikit-learn</span>
+                            <span class="skill-pill">Seaborn</span>
+                            <span class="skill-pill">Matplotlib</span>
+                        </div>
+                    </div>
+                    <!-- Visualization -->
+                    <div class="reveal" style="transition-delay: 180ms;">
+                        <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-6">Visualization
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill">Tableau</span>
+                            <span class="skill-pill">Power BI</span>
+                            <span class="skill-pill">Metabase</span>
+                        </div>
+                    </div>
+                    <!-- Tools & Environment -->
+                    <div class="reveal" style="transition-delay: 240ms;">
+                        <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-6">Tools &amp;
+                            Environment</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill">Linux</span>
+                            <span class="skill-pill">VS Code</span>
+                            <span class="skill-pill">IntelliJ</span>
+                            <span class="skill-pill">PyCharm</span>
+                            <span class="skill-pill">Jupyter Lab</span>
+                            <span class="skill-pill">Excel</span>
+                            <span class="skill-pill">Git</span>
+                        </div>
+                    </div>
+                    <!-- Specializations -->
+                    <div class="reveal" style="transition-delay: 300ms;">
+                        <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-6">Specializations
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-pill">Machine Learning</span>
+                            <span class="skill-pill">Data Analytics</span>
+                            <span class="skill-pill">Predictive Modeling</span>
+                            <span class="skill-pill">NLP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Contact -->
+        <section class="bg-surface py-32 md:py-64" id="about">
+            <div class="px-8 max-w-screen-2xl mx-auto">
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-span-12 lg:col-span-6 reveal">
+                        <h3 class="font-headline text-5xl font-extralight tracking-tight mb-12">I believe that the most
+                            powerful digital experiences are the ones that feel essential.</h3>
+                    </div>
+                    <div class="col-span-12 lg:col-span-5 lg:col-start-8 reveal" style="transition-delay: 100ms;">
+                        <p class="font-body text-xl text-on-surface-variant leading-relaxed mb-6">
+                            I am a curious and driven student, currently pursuing a Master of Computer Applications
+                            (MCA) at Ajeenkya DY Patil University (ADYPU) in Pune, India. With a unique background
+                            encompassing professional video editing, I bring a highly creative problem-solving mindset
+                            to the world of technology.
+                        </p>
+                        <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
+                            I am deeply fascinated by the inner workings of Artificial Intelligence, Machine Learning,
+                            and Data Science. Driven by a desire to understand exactly how intelligent systems operate,
+                            I am actively learning and expanding my technical expertise to build data-driven
+                            applications.
+                        </p>
+                        <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-12">
+                            Always eager to tackle new domains, my current exploration lies at the intersection of
+                            quantitative finance and machine learning algorithms. I love bridging the gap between
+                            creative intuition and rigorous analytical modeling to uncover actionable insights from
+                            complex datasets.
+                        </p>
+                        <div class="space-y-12 mt-24" id="contact">
+                            <div>
+                                <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase mb-6">Direct
+                                    Inquiry</h4>
+                                <div class="flex flex-col gap-4">
+                                    <a class="font-headline text-2xl font-light hover:text-primary transition-colors"
+                                        href="mailto:09anubhavvyas11@gmail.com">09anubhavvyas11@gmail.com</a>
+                                    <a class="font-headline text-2xl font-light hover:text-primary transition-colors"
+                                        href="tel:7728043319">+91 77280 43319</a>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-8 pt-12 border-t border-outline-variant/30">
+                                <div class="space-y-4">
+                                    <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Code</h4>
+                                    <ul class="space-y-2">
+                                        <li><a class="font-body text-sm hover:text-primary transition-colors"
+                                                href="https://github.com/anubhav09dot07">GitHub</a></li>
+                                        <li><a class="font-body text-sm hover:text-primary transition-colors"
+                                                href="https://leetcode.com/u/r0c9y/">LeetCode</a></li>
+                                        <li><a class="font-body text-sm hover:text-primary transition-colors"
+                                                href="https://huggingface.co/anubhav0907">Hugging Face</a></li>
+                                    </ul>
+                                </div>
+                                <div class="space-y-4">
+                                    <h4 class="font-label text-[10px] tracking-[0.2em] text-outline uppercase">Network
+                                    </h4>
+                                    <ul class="space-y-2">
+                                        <li><a class="font-body text-sm hover:text-primary transition-colors"
+                                                href="https://www.linkedin.com/in/anubhav-vyas-04701332a/">LinkedIn</a>
+                                        </li>
+                                        <li><a class="font-body text-sm hover:text-primary transition-colors"
+                                                href="https://www.kaggle.com/anubh09">Kaggle</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-12 bg-neutral-100 dark:bg-neutral-950">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8">
+            <div class="font-manrope text-[10px] tracking-[0.15em] uppercase text-neutral-600 dark:text-neutral-400">
+                © 2025 ANUBHAV VYAS. ALL RIGHTS RESERVED.
+            </div>
+            <div class="flex gap-8">
+                <a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-neutral-500 hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-200 transition-colors duration-300"
+                    href="https://github.com/anubhav09dot07">GitHub</a>
+                <a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-neutral-500 hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-200 transition-colors duration-300"
+                    href="https://www.linkedin.com/in/anubhav-vyas-04701332a/">LinkedIn</a>
+                <a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-neutral-500 hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-200 transition-colors duration-300"
+                    href="https://huggingface.co/anubhav0907">Hugging Face</a>
+                <a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-neutral-500 hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-200 transition-colors duration-300"
+                    href="https://www.kaggle.com/anubh09">Kaggle</a>
+                <a class="font-manrope text-[10px] tracking-[0.15em] uppercase text-neutral-500 hover:text-neutral-900 dark:text-neutral-600 dark:hover:text-neutral-200 transition-colors duration-300"
+                    href="https://leetcode.com/u/r0c9y/">LeetCode</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Fixed Social Bar (Framing Element) -->
+    <div class="fixed right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-12 items-center z-40">
+        <div class="w-[1px] h-32 bg-outline-variant/30"></div>
+        <a class="rotate-90 origin-center font-label text-[9px] tracking-[0.3em] text-outline hover:text-primary transition-colors uppercase whitespace-nowrap"
+            href="https://github.com/anubhav09dot07">GitHub</a>
+        <a class="rotate-90 origin-center font-label text-[9px] tracking-[0.3em] text-outline hover:text-primary transition-colors uppercase whitespace-nowrap"
+            href="https://www.linkedin.com/in/anubhav-vyas-04701332a/">LinkedIn</a>
+        <div class="w-[1px] h-32 bg-outline-variant/30"></div>
+    </div>
+
+    <!-- JavaScript: Nav underline animation + scroll reveal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ============ NAV UNDERLINE ANIMATION ============
+            const navLinks = document.querySelectorAll('.nav-link');
+            const underline = document.getElementById('navUnderline');
+            const sections = ['work', 'blogs', 'about', 'contact'];
+
+            function moveUnderline(link) {
+                if (!underline || !link) return;
+                const linkRect = link.getBoundingClientRect();
+                const parentRect = link.parentElement.getBoundingClientRect();
+                underline.style.left = (linkRect.left - parentRect.left) + 'px';
+                underline.style.width = linkRect.width + 'px';
+            }
+
+            // Set initial position
+            const initialActive = document.querySelector('.nav-link.active');
+            if (initialActive && underline) {
+                // Small delay to let fonts load
+                setTimeout(() => moveUnderline(initialActive), 100);
+            }
+
+            // Update on window resize
+            window.addEventListener('resize', () => {
+                const active = document.querySelector('.nav-link.active');
+                if (active) moveUnderline(active);
+            });
+
+            // IntersectionObserver for scroll-based activation
+            const observerOptions = {
+                root: null,
+                rootMargin: '-30% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        navLinks.forEach(link => {
+                            const linkSection = link.getAttribute('data-section');
+                            if (linkSection === sectionId) {
+                                link.classList.add('active');
+                                moveUnderline(link);
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(sectionId => {
+                const el = document.getElementById(sectionId);
+                if (el) sectionObserver.observe(el);
+            });
+
+            // Also observe the skills section and map it to no specific nav link
+            // (underline stays on previous section)
+
+            // ============ SCROLL REVEAL ANIMATION ============
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add delay from CSS transition-delay
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -80px 0px',
+                threshold: 0.1
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // ============ THEME TOGGLE ============
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                });
+            }
+
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else if (localStorage.theme === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+
+</html>
